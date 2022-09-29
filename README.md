@@ -1,16 +1,11 @@
-## [vite](https://vitejs.dev/) + [React](https://reactjs.org/) + [TypeScript](https://www.typescriptlang.org/) Starter
+1. yarn create vite: react, ts
+2. setup eslint: airbnb style, react version, parser, rules
+3. setup prettier
+4. setup husky pre-commit: lint-staged package hooks,
+5. setup vitest: jsdom, testing-library
+6. package scripts
 
-This setup includes:
+References:
 
-- [vite](https://vitejs.dev/)
-- [eslint](https://eslint.org/), [typescript-eslint](https://typescript-eslint.io/), [eslint-airbnb-config](https://github.com/airbnb/javascript), [prettier](https://prettier.io/)
-- [vitest](https://vitest.dev/), [jsdom](https://github.com/jsdom/jsdom), [@testing-library](https://testing-library.com/)
-- [react-router v6](https://reactrouter.com/en/main)
-
-Pull 1 test
-
-# References
-
-- https://markus.oberlehner.net/blog/using-testing-library-jest-dom-with-vitest/
-- https://testing-library.com/docs/queries/about#priority
-- https://kentcdodds.com/blog/common-mistakes-with-react-testing-library# vite_vitest_react_template
+- https://www.youtube.com/watch?v=7uKVFD_VMT8&list=PLYSZyzpwBEWTBdbfStjqJSGaulqcHoNkT&index=3
+- https://www.youtube.com/watch?v=cchqeWY0Nak
