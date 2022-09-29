@@ -29,8 +29,8 @@ function Home({ defaultCount, description }: Props) {
         <input
           id="incrementor"
           type="number"
-          value={incrementor.toString()}
-          onChange={(e) => setIncrementor(parseInt(e.target.value, 10) || 0)}
+          value={incrementor}
+          onChange={(e) => setIncrementor(parseInt(e.target.value, 10))}
         />
       </label>
       <button

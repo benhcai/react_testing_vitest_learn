@@ -54,9 +54,9 @@ describe("Counter", () => {
     describe("when the incrementor is changed to 15 and subtract button is clicked", () => {
       it("renders 'count: 15'", async () => {
         renderHome()
-        const input = screen.getByText(/incrementor/i)
+        const input = screen.getByLabelText(/incrementor/i)
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        await user.type(input, "{selectall}{delete}15")
+        await user.type(input, "{selectall}15")
         await user.click(
           screen.getByRole("button", { name: "Subtract from Counter" })
         )
