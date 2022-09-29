@@ -1,6 +1,10 @@
 import matchers from "@testing-library/jest-dom/matchers"
-import { expect } from "vitest"
+import { expect, beforeEach, beforeAll } from "vitest"
 import { configure } from "@testing-library/react"
 
+beforeAll(() => {
+  console.clear()
+})
+
 expect.extend(matchers)
-configure({ showOriginalStackTrace: false })
+// configure({ showOriginalStackTrace: false })

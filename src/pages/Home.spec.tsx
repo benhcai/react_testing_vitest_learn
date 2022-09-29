@@ -1,10 +1,12 @@
 import { fireEvent, render, screen } from "@testing-library/react"
+import user from "@testing-library/user-event"
+import { vi } from "vitest"
 import Home from "./Home"
 
 describe("Counter", () => {
   describe("initialized with initalCount=0 and description='My Counter'", () => {
     const renderHome = () =>
-      render(<Home defaultCount={0} descrpiton="My Counter" />)
+      render(<Home defaultCount={0} description="My Counter" />)
 
     it("renders current count=0 ", () => {
       renderHome()
@@ -35,5 +37,25 @@ describe("Counter", () => {
       fireEvent.click(screen.getByRole("button", { name: "-" }))
       expect(screen.getByText("Count: -1")).toBeInTheDocument()
     })
+
+    describe("when the incrementor changes to 5 and + button is clicked", () => {
+      it("renders 'count: 15'", async () => {
+        renderHome()
+        const input = screen.getByText(/incrementor/i)
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+        await user.type(input, "{selectall}{delete}15")
+        await user.click(screen.getByRole("button", { name: "Add to Counter" }))
+        await user.tab()
+        expect(screen.getByText("Count: 15")).toBeInTheDocument()
+        // expect(screen.getByText("count: 15")).toBeInTheDocument()
+      })
+    })
   })
+})
+
+it("should accepts values for the new todo ", async () => {
+  render(<Home defaultCount={0} description="" />)
+  const Input = screen.getByLabelText(/add todo/i)
+  await user.type(Input, "a new todo")
+  expect(Input).toHaveValue("a new todo")
 })

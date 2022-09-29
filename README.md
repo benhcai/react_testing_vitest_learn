@@ -1,5 +1,5 @@
 1. yarn create vite: react, ts
-2. setup eslint: airbnb style, react version, parser, rules
+2. setup eslint: airbnb style, react version, parser, rules, warnings not errors
 3. setup prettier
 4. setup husky pre-commit: lint-staged package hooks,
 5. setup vitest: jsdom, testing-library

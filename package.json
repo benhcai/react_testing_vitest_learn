@@ -8,7 +8,9 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "test": "vitest",
-    "lint": "eslint \"**/*.{ts,tsx}\"",
+    "test:r": "clear && yarn test run",
+    "test:w": "clear && yarn test",
+    "lint": "eslint --max-warnings=0 \"**/*.{ts,tsx}\"",
     "lint:f": "eslint \"**/*.{ts,tsx}\" --fix",
     "prettier:f": "prettier --write --ignore-unknown .",
     "prepare": "husky install",
@@ -22,6 +24,7 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^14.4.3",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@types/react-router-dom": "^5.3.3",

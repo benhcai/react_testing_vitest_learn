@@ -6,7 +6,10 @@ function App() {
   return (
     <div id="App">
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route
+          path="/"
+          element={<Home defaultCount={0} description="My Counter" />}
+        />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>

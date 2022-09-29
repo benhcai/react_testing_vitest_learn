@@ -1,7 +1,15 @@
 import { useState } from "react"
 
-function Home() {
-  const [count, setCount] = useState(0)
+interface Props {
+  defaultCount: number
+  description: string
+}
+
+function Home({ defaultCount, description }: Props) {
+  const [count, setCount] = useState(defaultCount)
+  const [incrementor, setIncrementor] = useState(0)
+  const [todoVal, setTodoVal] = useState("")
+
   return (
     <div>
       My Counter
@@ -16,6 +24,29 @@ function Home() {
       >
         +
       </button>
+      <label htmlFor="incrementor">
+        incrementor
+        <input
+          id="incrementor"
+          type="number"
+          value={incrementor.toString()}
+          onChange={(e) => setIncrementor(parseInt(e.target.value, 10) || 0)}
+        />
+      </label>
+      <button
+        type="button"
+        onClick={() => setCount((prev) => prev + incrementor)}
+      >
+        Add to Counter
+      </button>
+      <input
+        type="text"
+        aria-label="Add Todo"
+        required
+        value={todoVal}
+        onChange={(e) => setTodoVal(e.target.value)}
+      />
+      <button type="submit">Add Todo</button>
     </div>
   )
 }
