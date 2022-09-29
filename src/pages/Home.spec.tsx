@@ -38,7 +38,7 @@ describe("Counter", () => {
       expect(screen.getByText("Count: -1")).toBeInTheDocument()
     })
 
-    describe("when the incrementor changes to 5 and + button is clicked", () => {
+    describe("when the incrementor is changed to 15 and add button is clicked", () => {
       it("renders 'count: 15'", async () => {
         renderHome()
         const input = screen.getByText(/incrementor/i)
@@ -47,6 +47,21 @@ describe("Counter", () => {
         await user.click(screen.getByRole("button", { name: "Add to Counter" }))
         await user.tab()
         expect(screen.getByText("Count: 15")).toBeInTheDocument()
+        // expect(screen.getByText("count: 15")).toBeInTheDocument()
+      })
+    })
+
+    describe("when the incrementor is changed to 15 and subtract button is clicked", () => {
+      it("renders 'count: 15'", async () => {
+        renderHome()
+        const input = screen.getByText(/incrementor/i)
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+        await user.type(input, "{selectall}{delete}15")
+        await user.click(
+          screen.getByRole("button", { name: "Subtract from Counter" })
+        )
+        // await user.tab()
+        expect(screen.getByText("Count: -15")).toBeInTheDocument()
         // expect(screen.getByText("count: 15")).toBeInTheDocument()
       })
     })
