@@ -1,29 +1,30 @@
-import { render, screen } from "@testing-library/react"
 import { MemoryRouter } from "react-router-dom"
-
-import { WrappedApp, App } from "./App"
+import { render, screen } from "@testing-library/react"
+import { App, RoutedApp } from "./App"
 
 describe("App", () => {
-  it("Renders hello world", () => {
-    // ARRANGE
-    render(<WrappedApp />)
-    // ACT
-    // EXPECT
+  it("renders hello world", () => {
+    // Arrange
+    render(<RoutedApp />)
+    // Act
+    // Expect
     expect(
       screen.getByRole("heading", {
         level: 1,
       })
     ).toHaveTextContent("Hello World")
   })
-  it("Renders not found if invalid path", () => {
+
+  it("renders not found if invalid path", () => {
     render(
-      <MemoryRouter initialEntries={["/this-route-does-not-exist"]}>
+      <MemoryRouter initialEntries={["/not-a-real-route"]}>
         <App />
       </MemoryRouter>
     )
+
     expect(
       screen.getByRole("heading", {
-        level: 1,
+        level: 1
       })
     ).toHaveTextContent("Not Found")
   })

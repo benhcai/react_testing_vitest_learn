@@ -16,7 +16,7 @@
     "module": "ESNext",
     "moduleResolution": "Node",
     "resolveJsonModule": true,
-    "isolatedModules": true,
+    "isolatedModules": false,
     "noEmit": true,
     "jsx": "react-jsx"
   },
@@ -24,7 +24,7 @@
     "vite.config.ts",
     ".eslintrc.cjs",
     "src",
-    "vitest.setup.ts"
+    "vitest.setupTests.ts"
   ],
   "references": [
     {
