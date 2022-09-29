@@ -8,30 +8,26 @@ module.exports = {
     "airbnb",
     "airbnb-typescript",
     "airbnb/hooks",
-    'plugin:@typescript-eslint/recommended',
-    'plugin:@typescript-eslint/recommended-requiring-type-checking',
-    'plugin:import/recommended',
-    'plugin:prettier/recommended',
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:testing-library/react",
+    "plugin:prettier/recommended",
   ],
   overrides: [],
-  parser: '@typescript-eslint/parser',
+  parser: "@typescript-eslint/parser",
   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: './tsconfig.json',
+    ecmaVersion: "latest",
+    sourceType: "module",
+    project: "./tsconfig.json",
   },
   settings: {
     react: {
-      version: "detect"
+      version: "detect",
     },
-    "import/resolver": {
-      typescript: true,
-      node: true
-    }
   },
-  plugins: ['react', '@typescript-eslint', 'prettier'],
+  plugins: ["react", "@typescript-eslint", "prettier"],
   rules: {
-    'react/react-in-jsx-scope': 0,
-    'import/no-extraneous-dependencies': 0
+    "react/react-in-jsx-scope": 0,
+    "import/no-extraneous-dependencies": 0,
   },
-};
+}

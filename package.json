@@ -9,7 +9,10 @@
     "preview": "vite preview",
     "test": "vitest",
     "lint": "eslint \"**/*.{ts,tsx}\"",
-    "lint:f": "eslint \"**/*.{ts,tsx}\" --fix"
+    "lint:f": "eslint \"**/*.{ts,tsx}\" --fix",
+    "prettier:f": "prettier --write --ignore-unknown .",
+    "prepare": "husky install",
+    "lint-staged": "lint-staged"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -36,12 +39,19 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.31.1",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-testing-library": "^5.7.0",
+    "husky": "^8.0.1",
     "install-peerdeps": "^3.0.3",
     "jsdom": "^20.0.0",
+    "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
     "typescript": "^4.6.4",
     "vite": "^3.0.7",
     "vitest": "^0.22.1"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "lint-staged": {
+    "*.(tsx|ts)": "yarn lint:f",
+    "*": "yarn prettier:f"
+  }
 }
