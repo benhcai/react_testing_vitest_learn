@@ -3,7 +3,8 @@
 3. setup prettier
 4. setup husky pre-commit: lint-staged package hooks,
 5. setup vitest: jsdom, testing-library
-6. package scripts
+6. add package scripts: test, lint, prettier, lint-staged
+7. configure pre-test vitest setup
 
 References:
 
