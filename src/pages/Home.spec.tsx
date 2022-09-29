@@ -41,9 +41,9 @@ describe("Counter", () => {
     describe("when the incrementor is changed to 15 and add button is clicked", () => {
       it("renders 'count: 15'", async () => {
         renderHome()
-        const input = screen.getByText(/incrementor/i)
+        const input = screen.getByRole("spinbutton")
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        await user.type(input, "{selectall}{delete}15")
+        await user.type(input, "{selectall}15")
         await user.click(screen.getByRole("button", { name: "Add to Counter" }))
         await user.tab()
         expect(screen.getByText("Count: 15")).toBeInTheDocument()
@@ -68,9 +68,11 @@ describe("Counter", () => {
   })
 })
 
-it("should accepts values for the new todo ", async () => {
-  render(<Home defaultCount={0} description="" />)
-  const Input = screen.getByLabelText(/add todo/i)
-  await user.type(Input, "a new todo")
-  expect(Input).toHaveValue("a new todo")
+describe("Todo", () => {
+  it("should accepts values for the new todo ", async () => {
+    render(<Home defaultCount={0} description="" />)
+    const Input = screen.getByLabelText(/add todo/i)
+    await user.type(Input, "a new todo")
+    expect(Input).toHaveValue("a new todo")
+  })
 })

@@ -39,6 +39,12 @@ function Home({ defaultCount, description }: Props) {
       >
         Add to Counter
       </button>
+      <button
+        type="button"
+        onClick={() => setCount((prev) => prev - incrementor)}
+      >
+        Subtract from Counter
+      </button>
       <input
         type="text"
         aria-label="Add Todo"
